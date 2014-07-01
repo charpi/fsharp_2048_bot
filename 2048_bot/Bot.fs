@@ -39,21 +39,13 @@ module Bot =
                         classToTile (t.GetAttribute("class"))
                     )
 
-    let rnd = new System.Random()
-    let nextMove (grid :Grid) :Move = match rnd.Next(1, 5) with
-                                        | 1 -> Left
-                                        | 2 -> Right
-                                        | 3 -> Up
-                                        | 4 -> Down
-                                        | _ -> Left
-
     let moveToCanopy (m :Move) = match m with
                                     | Left -> left
                                     | Right -> right
                                     | Up -> up
                                     | Down -> down
 
-    let rec doPlay iter :Score =
+    let rec doPlay engine iter :Score =
       match (someElement ".game-over") with
       | Some (x)->
           sleep(1) 
@@ -65,14 +57,13 @@ module Bot =
                          |> elementsWithin ".tile"
                          |> htmlToTile
                          |> tileToGrid
-                        // |> Array.iter (fun x -> printf "%s" (Array.toList(x).ToString()))
-                         |> nextMove
+                         |> engine
                          |> moveToCanopy
                          |> press
                          |> ignore in
-         doPlay (iter+1)
+         doPlay engine (iter+1)
 
-    let play :Score =
+    let play engine :Score =
         start firefox
         url baseURL
-        doPlay 0
+        doPlay engine 0
