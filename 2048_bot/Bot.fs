@@ -55,9 +55,11 @@ module Bot =
 
     let rec doPlay iter :Score =
       match (someElement ".game-over") with
-      | Some (x)-> 
+      | Some (x)->
+          sleep(1) 
+          let score = (element ".score-container").Text in 
           quit()
-          (iter, (element ".score-container").Text)
+          (iter, score)
       | None ->
         let steps = element ".tile-container"
                          |> elementsWithin ".tile"
