@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "2048_bot", "2048_bot\2048_bot.fsproj", "{A115CA88-58C1-43F9-AC35-F1BD8307581F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A115CA88-58C1-43F9-AC35-F1BD8307581F}.Debug|x86.ActiveCfg = Debug|x86
+		{A115CA88-58C1-43F9-AC35-F1BD8307581F}.Debug|x86.Build.0 = Debug|x86
+		{A115CA88-58C1-43F9-AC35-F1BD8307581F}.Release|x86.ActiveCfg = Release|x86
+		{A115CA88-58C1-43F9-AC35-F1BD8307581F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = 2048_bot\2048_bot.fsproj
+	EndGlobalSection
+EndGlobal
